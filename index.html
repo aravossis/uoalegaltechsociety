@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>University of Athens Legal Tech Society</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome icons (no integrity to avoid CSP issues in editors) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer">
+
+  <style>
+    /* =========  COLOR & TYPOGRAPHY  ========= */
+    :root{
+      --primary:#5118ff;
+      --primary-dark:#390ec9;
+      --bg-light:#f9f9f9;
+      --text-dark:#222;
+      --text-light:#fff;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Open Sans',sans-serif;
+      background:var(--bg-light);
+      color:var(--text-dark);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+
+    /* =========  HEADER & NAV  ========= */
+    header{
+      background:var(--primary);
+      color:var(--text-light);
+      text-align:center;
+      padding:2rem 1rem 1rem;
+    }
+    header img{max-width:280px;width:80%;height:auto}
+    header h1{font-size:2.2rem;font-weight:700;margin-top:1rem}
+    .badge{
+      background:var(--primary-dark);
+      display:inline-block;
+      padding:.4rem .9rem;
+      border-radius:999px;
+      margin-top:.75rem;
+      font-size:.85rem;
+    }
+    nav{margin-top:1.6rem}
+    .nav-links{
+      list-style:none;
+      display:flex;
+      justify-content:center;
+      gap:1.6rem;
+      flex-wrap:wrap;
+    }
+    .nav-links a{
+      color:var(--text-light);
+      font-weight:600;
+      transition:opacity .2s;
+    }
+    .nav-links a:hover{opacity:.85}
+
+    /* =========  SOCIAL ICONS  ========= */
+    .social{
+      list-style:none;
+      display:flex;
+      justify-content:center;
+      gap:1rem;
+      margin-top:1rem;
+    }
+    .social a{
+      font-size:1.5rem;
+      transition:opacity .3s;
+    }
+    .social a:hover{opacity:.8}
+
+    /* =========  GENERIC SECTIONS  ========= */
+    section{padding:3rem 1rem}
+    section h2{color:var(--primary);text-align:center;margin-bottom:2rem}
+
+    /* =========  ABOUT  ========= */
+    #about{max-width:900px;margin:0 auto;text-align:center}
+
+    /* =========  JOIN CTA  ========= */
+    #join-cta{
+      background:linear-gradient(90deg,var(--primary) 70%,#7157f7 100%);
+      color:var(--text-light);
+      text-align:center;
+    }
+    .cta-inner{max-width:620px;margin:0 auto}
+    #join-cta h2{font-size:2.3rem;font-weight:800;margin-bottom:1rem}
+    .cta-sub{font-size:1.1rem;margin-bottom:2rem}
+    .cta-btn{
+      display:inline-block;
+      background:#fff;
+      color:var(--primary);
+      font-weight:700;
+      padding:.9rem 2.4rem;
+      border-radius:40px;
+      transition:.25s;
+      box-shadow:0 2px 8px rgba(81,24,255,.12);
+    }
+    .cta-btn:hover{background:var(--primary-dark);color:#fff}
+
+    /* =========  PAST EVENTS  ========= */
+    .events-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:1.5rem;
+      max-width:1000px;
+      margin:0 auto;
+    }
+    .event-card{
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 3px 8px rgba(0,0,0,.06);
+      padding:1rem;
+      text-align:center;
+      transition:transform .2s;
+    }
+    .event-card:hover{transform:translateY(-4px)}
+    .event-card img{
+      width:100%;
+      max-width:240px;
+      height:140px;
+      object-fit:cover;
+      border-radius:10px;
+      margin-bottom:.9rem;
+      background:#eee;
+    }
+    .event-card h3{color:var(--primary-dark);font-size:1.1rem;margin:.4rem 0 .2rem}
+    .event-card .date{color:#777;font-size:.9rem;margin-bottom:.4rem}
+
+    /* =========  BOARD  ========= */
+    .team-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+      gap:1.4rem;
+      max-width:1200px;
+      margin:0 auto;
+    }
+    .team-card{
+      background:var(--bg-light);
+      border-radius:12px;
+      text-align:center;
+      padding:1.5rem 1rem;
+      box-shadow:0 4px 6px rgba(0,0,0,.05);
+      transition:transform .25s;
+    }
+    .team-card:hover{transform:translateY(-5px)}
+    .team-card img{
+      width:160px;height:160px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:1rem;
+      background:#ddd;
+    }
+    .team-card p{font-size:.9rem;color:#555}
+
+    /* =========  REPRESENTATIVES  ========= */
+    .rep-section{max-width:1000px;margin:0 auto 2.5rem}
+    .rep-section h3{color:var(--primary-dark);margin-bottom:1rem;text-align:left}
+    .rep-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+      gap:1.2rem;
+    }
+    .rep-card{
+      background:#fff;
+      padding:1rem;
+      border-radius:10px;
+      text-align:center;
+      box-shadow:0 3px 5px rgba(0,0,0,.04);
+    }
+    .rep-card img{
+      width:100px;height:100px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:.75rem;
+      background:#eee;
+    }
+
+    /* =========  FOOTER  ========= */
+    footer{
+      background:var(--primary);
+      color:var(--text-light);
+      text-align:center;
+      padding:1rem;
+      font-size:.85rem;
+    }
+
+    /* =========  COOKIE BANNER  ========= */
+    #cookie-consent{position:fixed;bottom:0;left:0;right:0;display:none;z-index:3000}
+    .cookie-inner{
+      background:#fff;
+      color:#333;
+      border-radius:8px;
+      box-shadow:0 2px 12px rgba(0,0,0,.1);
+      max-width:95vw;
+      left:50%;
+      transform:translateX(-50%);
+      position:relative;
+      padding:1rem 1.2rem;
+      display:flex;
+      gap:1rem;
+      align-items:center;
+      font-size:1rem;
+    }
+    #cookie-consent button{
+      background:var(--primary);
+      color:#fff;
+      border:none;
+      padding:.55rem 1.3rem;
+      border-radius:24px;
+      font-weight:700;
+      cursor:pointer;
+      transition:background .18s;
+    }
+    #cookie-consent button:hover{background:var(--primary-dark)}
+
+    /* =========  RESPONSIVE TYPOGRAPHY  ========= */
+    @media(min-width:768px){
+      header h1{font-size:2.6rem}
+      #join-cta h2{font-size:2.8rem}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <img src="logo.png" alt="Legal Tech Society logo">
+    <h1>University of Athens Legal Tech Society</h1>
+    <div class="badge">Υπό την αιγίδα του Υπουργείου Ψηφιακής Διακυβέρνησης</div>
+
+    <!-- NAVIGATION -->
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#join-cta">Join</a></li>
+        <li><a href="#past-events">Past Events</a></li>
+        <li><a href="#board">Board</a></li>
+        <li><a href="#representatives">Representatives</a></li>
+      </ul>
+    </nav>
+
+    <!-- SOCIAL ICONS -->
+    <ul class="social">
+      <li><a href="https://www.instagram.com/uoalegaltechsociety/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="https://www.linkedin.com/company/university-of-athens-legal-tech-society" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="https://www.youtube.com/channel/UCMtzoodKvkPYkMW5TBcRvkg" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+      <li><a href="https://www.facebook.com/profile.php?id=61573523858683" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+    </ul>
+  </header>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <h2>About the Society</h2>
+    <p>The UoA Legal Tech Society is a student-run group advancing legal technology and innovation. Our mission is to connect students, professionals and academics exploring how technology is transforming the practice and study of law.</p>
+  </section>
+
+  <!-- ===== JOIN CTA ===== -->
+  <section id="join-cta">
+    <div class="cta-inner">
+      <h2>270+ Members from 6 Universities</h2>
+      <p class="cta-sub">Become part of the Legal Tech Society community!</p>
+      <a href="https://forms.gle/Maad5N4tk7XgCqyv8" class="cta-btn" target="_blank" rel="noopener">Become a Member</a>
+    </div>
+  </section>
+
+  <!-- ===== PAST EVENTS ===== -->
+  <section id="past-events">
+    <h2>Past Events</h2>
+    <div class="events-grid">
+      <!-- Sample event 1 -->
+      <div class="event-card">
+        <img src="event1.jpg" alt="Legal Tech Workshop poster">
+        <h3>Legal Tech Workshop</h3>
+        <p class="date">20 April 2024</p>
+        <p>Introductory workshop on legal tech with industry speakers from law and technology.</p>
+      </div>
+      <!-- Sample event 2 -->
+      <div class="event-card">
+        <img src="event2.jpg" alt="AI & Law panel poster">
+        <h3>AI & Law: Challenges and Opportunities</h3>
+        <p class="date">15 March 2024</p>
+        <p>Round-table discussion on artificial intelligence and the future of law in Greece.</p>
+      </div>
+      <!-- Add more events here -->
+    </div>
+  </section>
+
+  <!-- ===== BOARD ===== -->
+  <section id="board">
+    <h2>Board</h2>
+    <div class="team-grid">
+      <div class="team-card"><img src="board1.jpg" alt="George Arabosis"><h3>George Arabosis</h3><p>President</p></div>
+      <div class="team-card"><img src="board2.jpg" alt="Charis Voulgaraki"><h3>Charis Voulgaraki</h3><p>Vice-President</p></div>
+      <div class="team-card"><img src="board3.jpg" alt="Vasiliki Damaskou"><h3>Vasiliki Damaskou</h3><p>General Secretary</p></div>
+      <div class="team-card"><img src="board4.jpg" alt="Varvara-Vasiliki Kossieri"><h3>Varvara-Vasiliki Kossieri</h3><p>Head of Marketing</p></div>
+      <div class="team-card"><img src="board5.jpg" alt="Ergina Georgiou"><h3>Ergina Georgiou</h3><p>Head of Events</p></div>
+      <div class="team-card"><img src="board6.jpg" alt="Vasiliki-Rafaella Serepa"><h3>Vasiliki-Rafaella Serepa</h3><p>Head of Publishing</p></div>
+    </div>
+  </section>
+
+  <!-- ===== REPRESENTATIVES ===== -->
+  <section id="representatives">
+    <h2>Year Representatives</h2>
+
+    <div class="rep-section">
+      <h3>2nd Year</h3>
+      <div class="rep-grid">
+        <div class="rep-card"><img src="rep2_1.jpg" alt="Dimitra Yiannopoulou"><p>Dimitra Yiannopoulou</p></div>
+        <div class="rep-card"><img src="rep2_2.jpg" alt="Adamantia Glinou"><p>Adamantia Glinou</p></div>
+        <div class="rep-card"><img src="rep2_3.jpg" alt="Efi Zafeiropoulou"><p>Efi Zafeiropoulou</p></div>
+        <div class="rep-card"><img src="rep2_4.jpg" alt="Dimitris Katsimpas"><p>Dimitris Katsimpas</p></div>
+        <div class="rep-card"><img src="rep2_5.jpg" alt="Anthi Bousouni"><p>Anthi Bousouni</p></div>
+        <div class="rep-card"><img src="rep2_6.jpg" alt="Andrea Papadopoulou"><p>Andrea Papadopoulou</p></div>
+      </div>
+    </div>
+
+    <div class="rep-section">
+      <h3>3rd Year</h3>
+      <div class="rep-grid">
+        <div class="rep-card"><img src="rep3_1.jpg" alt="Konstantina Emmanouilidi"><p>Konstantina Emmanouilidi</p></div>
+        <div class="rep-card"><img src="rep3_2.jpg" alt="Giorgos Zografopoulos"><p>Giorgos Zografopoulos</p></div>
+        <div class="rep-card"><img src="rep3_3.jpg" alt="Ioannis Karvelas"><p>Ioannis Karvelas</p></div>
+        <div class="rep-card"><img src="rep3_4.jpg" alt="Zoi Kafeza"><p>Zoi Kafeza</p></div>
+      </div>
+    </div>
+
+    <div class="rep-section">
+      <h3>4th Year</h3>
+      <div class="rep-grid">
+        <div class="rep-card"><img src="rep4_1.jpg" alt="Filippos Efthimiou"><p>Filippos Efthimiou</p></div>
+        <div class="rep-card"><img src="rep4_2.jpg" alt="Fotis Kalogiros"><p>Fotis Kalogiros</p></div>
+        <div class="rep-card"><img src="rep4_3.jpg" alt="Afroditi Charitonidou"><p>Afroditi Charitonidou</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    © 2025 University of Athens Legal Tech Society. All rights reserved.
+  </footer>
+
+  <!-- ===== SIMPLE COOKIE CONSENT ===== -->
+  <div id="cookie-consent">
+    <div class="cookie-inner">
+      <span>This website uses cookies to ensure you get the best experience. <a href="#" id="privacy-link">Privacy Policy</a></span>
+      <button id="cookie-accept">Accept</button>
+    </div>
+  </div>
+
+  <script>
+    /* --- basic GDPR cookie banner --- */
+    window.addEventListener('DOMContentLoaded',()=>{
+      const banner=document.getElementById('cookie-consent');
+      if(!localStorage.getItem('gdpr_consent')) banner.style.display='block';
+      document.getElementById('cookie-accept').onclick=()=>{localStorage.setItem('gdpr_consent','yes');banner.style.display='none'};
+      document.getElementById('privacy-link').onclick=e=>{
+        e.preventDefault();
+        alert('Replace this link with your real Privacy Policy document.');
+      };
+    });
+  </script>
+</body>
+</html>

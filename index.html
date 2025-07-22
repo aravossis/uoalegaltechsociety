@@ -208,6 +208,22 @@
       padding:1rem;
       font-size:.85rem;
     }
+/* footer social icons – horizontal row, no bullets */
+.footer-social{
+  list-style:none;          /* no bullet dots */
+  display:flex;             /* one straight row */
+  justify-content:center;   /* centred under the copyright line */
+  gap:1.6rem;               /* spacing between icons */
+  padding:0;                /* remove left indent */
+  margin:0.6rem 0 1.2rem;   /* a little breathing room */
+}
+
+.footer-social a{
+  font-size:1.8rem;         /* bigger icons */
+  color:#fff;               /* white on purple footer */
+  transition:opacity .25s;
+}
+.footer-social a:hover{opacity:0.8}
 
     /* =========  COOKIE BANNER  ========= */
     #cookie-consent{position:fixed;bottom:0;left:0;right:0;display:none;z-index:3000}
@@ -370,11 +386,11 @@
   </div>
 </section>
 
-  <!-- ===== FOOTER ===== -->
+ 
   <!-- ===== FOOTER ===== -->
 <footer>
   <p style="margin-bottom:0.6rem">
-    © 2025 University of Athens Legal Tech Society. All rights reserved.
+    © 2025 University of Athens Legal Tech Society. Proudly vibecoded by UoA Legal Tech Society's team.
   </p>
 
   <ul class="footer-social">

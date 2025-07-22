@@ -180,6 +180,21 @@
       margin-bottom:.75rem;
       background:#eee;
     }
+    /* simple list style for reps */
+.rep-list{
+  list-style:none;
+  padding-left:0;
+  columns:2 auto;       /* two‑column layout on wide screens */
+  max-width:600px;
+  margin:0 auto;
+}
+.rep-list li{
+  margin:0.3rem 0;
+}
+@media(max-width:600px){
+  .rep-list{columns:1;} /* single column on mobile */
+}
+
 
     /* =========  FOOTER  ========= */
     footer{
@@ -312,45 +327,48 @@
       <div class="team-card"><img src="board6.jpg" alt="Vasiliki-Rafaella Serepa"><h3>Vasiliki-Rafaella Serepa</h3><p>Head of Academic Activities</p></div>
     </div>
   </section>
+<!-- ===== REPRESENTATIVES ===== -->
+<section id="representatives">
+  <h2>Year Representatives</h2>
 
-  <!-- ===== REPRESENTATIVES ===== -->
-  <section id="representatives">
-    <h2>Year Representatives</h2>
+  <!-- 2nd Year -->
+  <div class="rep-section">
+    <h3>2nd Year</h3>
+    <ul class="rep-list">
+      <li>Dimitra Yiannopoulou</li>
+      <li>Adamantia Glinou</li>
+      <li>Efi Zafeiropoulou</li>
+      <li>Dimitris Katsimpas</li>
+      <li>Anthi Bousouni</li>
+      <li>Andrea Papadopoulou</li>
+    </ul>
+  </div>
 
-    <div class="rep-section">
-      <h3>2nd Year</h3>
-      <div class="rep-grid">
-        <div class="rep-card"><img src="rep2_1.jpg" alt="Dimitra Yiannopoulou"><p>Dimitra Yiannopoulou</p></div>
-        <div class="rep-card"><img src="rep2_2.jpg" alt="Adamantia Glinou"><p>Adamantia Glinou</p></div>
-        <div class="rep-card"><img src="rep2_3.jpg" alt="Efi Zafeiropoulou"><p>Efi Zafeiropoulou</p></div>
-        <div class="rep-card"><img src="rep2_4.jpg" alt="Dimitris Katsimpas"><p>Dimitris Katsimpas</p></div>
-        <div class="rep-card"><img src="rep2_5.jpg" alt="Anthi Bousouni"><p>Anthi Bousouni</p></div>
-        <div class="rep-card"><img src="rep2_6.jpg" alt="Andrea Papadopoulou"><p>Andrea Papadopoulou</p></div>
-      </div>
-    </div>
+  <!-- 3rd Year -->
+  <div class="rep-section">
+    <h3>3rd Year</h3>
+    <ul class="rep-list">
+      <li>Konstantina Emmanouilidi</li>
+      <li>Giorgos Zografopoulos</li>
+      <li>Ioannis Karvelas</li>
+      <li>Zoi Kafeza</li>
+    </ul>
+  </div>
 
-    <div class="rep-section">
-      <h3>3rd Year</h3>
-      <div class="rep-grid">
-        <div class="rep-card"><img src="rep3_1.jpg" alt="Konstantina Emmanouilidi"><p>Konstantina Emmanouilidi</p></div>
-        <div class="rep-card"><img src="rep3_2.jpg" alt="Giorgos Zografopoulos"><p>Giorgos Zografopoulos</p></div>
-        <div class="rep-card"><img src="rep3_3.jpg" alt="Ioannis Karvelas"><p>Ioannis Karvelas</p></div>
-        <div class="rep-card"><img src="rep3_4.jpg" alt="Zoi Kafeza"><p>Zoi Kafeza</p></div>
-      </div>
-    </div>
-
-    <div class="rep-section">
-      <h3>4th Year</h3>
-      <div class="rep-grid">
-        <div class="rep-card"><img src="rep4_1.jpg" alt="Filippos Efthimiou"><p>Filippos Efthimiou</p></div>
-        <div class="rep-card"><img src="rep4_2.jpg" alt="Fotis Kalogiros"><p>Fotis Kalogiros</p></div>
-        <div class="rep-card"><img src="rep4_3.jpg" alt="Afroditi Charitonidou"><p>Afroditi Charitonidou</p></div>
-      </div>
-    </div>
-  </section>
+  <!-- 4th Year -->
+  <div class="rep-section">
+    <h3>4th Year</h3>
+    <ul class="rep-list">
+      <li>Filippos Efthimiou</li>
+      <li>Fotis Kalogiros</li>
+      <li>Afroditi Charitonidou</li>
+    </ul>
+  </div>
+</section>
 
   <!-- ===== FOOTER ===== -->
   <footer>
+    
     © 2025 University of Athens Legal Tech Society. All rights reserved.
   </footer>
 

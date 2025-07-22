@@ -380,6 +380,45 @@
   .auspices-title{font-size:1.1rem}
   .auspices-wrapper img{max-width:260px}
 }
+/* ---- Brand block ---- */
+.brand-flex{
+  display:flex;
+  align-items:center;
+  justify-content:center;     /* keeps whole group centred */
+  gap:1rem;
+  margin:0 auto 1.6rem;       /* bottom space before “Auspices” */
+  max-width:950px;
+}
+
+.brand-flex img{
+  height:110px;               /* logo size – adjust as needed */
+  width:auto;
+  flex-shrink:0;
+  border-radius:14px;         /* rounded corners */
+}
+
+.brand-text{
+  line-height:1.05;
+}
+
+.brand-text .line1{
+  font-size:2.6rem;           /* first line */
+  font-weight:600;
+  color:#fff;                 /* WHITE */
+}
+
+.brand-text .line2{
+  font-size:3.8rem;           /* second line, larger */
+  font-weight:700;
+  color:#fff;                 /* WHITE */
+}
+
+/* Mobile scale‑down */
+@media(max-width:600px){
+  .brand-flex img{height:70px}
+  .brand-text .line1{font-size:1.6rem}
+  .brand-text .line2{font-size:2.4rem}
+}
 
   </style>
 </head>
@@ -387,9 +426,18 @@
 
   <!-- ===== HEADER ===== -->
   <header>
+<!-- ===== Brand (icon + two‑line title) ===== -->
+<div class="brand-flex">
+  <img src="assets/logo.png" alt="Legal Tech Society logo">
+
+  <div class="brand-text">
+    <span class="line1">University&nbsp;of&nbsp;Athens</span>
+    <span class="line2">Legal Tech Society</span>
+  </div>
+</div>
 
     
-    <img src="logo.png" alt="Legal Tech Society logo">
+
 <h1 class="visually-hidden">University of Athens Legal Tech Society</h1>
 
  <div class="auspices-wrapper">

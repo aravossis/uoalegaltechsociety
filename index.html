@@ -351,14 +351,11 @@
     </p>
 
     <p class="cta-line">
-      Από <span class="hl-yellow">from 5+ Universities</span> 
+      From <span class="hl-yellow"> 5+ Universities</span> 
     </p>
-
-    <p class="cta-unis">Become part of the Legal Tech Society community!</p>
-
     <a href="https://forms.gle/Maad5N4tk7XgCqyv8"
        class="cta-btn" target="_blank" rel="noopener">
-      Become part of the Legal Tech Society community
+      Become part of the Legal Tech Society community!
     </a>
   </div>
 </section>
@@ -483,12 +480,13 @@
 
 
   <!-- ===== SIMPLE COOKIE CONSENT ===== -->
-  <div id="cookie-consent">
-    <div class="cookie-inner">
-      <span>This website uses cookies to ensure you get the best experience. <a href="#" id="privacy-link">Privacy Policy</a></span>
-      <button id="cookie-accept">Accept</button>
-    </div>
+<div id="cookie-consent">
+  <div class="cookie-inner">
+    <span>This website uses cookies to ensure you get the best experience.</span>
+    <button id="cookie-accept">Accept</button>
   </div>
+</div>
+
 
   <script>
     /* --- basic GDPR cookie banner --- */
@@ -496,10 +494,6 @@
       const banner=document.getElementById('cookie-consent');
       if(!localStorage.getItem('gdpr_consent')) banner.style.display='block';
       document.getElementById('cookie-accept').onclick=()=>{localStorage.setItem('gdpr_consent','yes');banner.style.display='none'};
-      document.getElementById('privacy-link').onclick=e=>{
-        e.preventDefault();
-        alert('Replace this link with your real Privacy Policy document.');
-      };
     });
   </script>
 </body>

@@ -259,6 +259,52 @@
       header h1{font-size:2.6rem}
       #join-cta h2{font-size:2.8rem}
     }
+    /* --- Join CTA look & feel --- */
+#join-cta{
+  background:#F3F1FF;       /* light lavender */
+  color:#001D60;            /* default navy */
+  text-align:center;
+  padding:3.5rem 1rem 3rem;
+}
+
+.cta-number{
+  color:#FFA51B;            /* bright yellow */
+  font-size:4.8rem;
+  font-weight:800;
+  line-height:1;
+}
+
+.cta-members{
+  font-size:3rem;
+  font-weight:700;
+  margin-left:0.4rem;
+}
+
+.cta-line{
+  font-size:1.4rem;
+  margin:1.6rem 0 0.8rem;
+}
+
+.hl-yellow{color:#FFA51B;font-weight:700;}
+
+.cta-unis{
+  font-size:1.8rem;
+  font-weight:700;
+  letter-spacing:1px;
+  margin-bottom:2.2rem;
+}
+
+/* keep the existing button styles but add a slight shadow tweak */
+.cta-btn{
+  background:#fff;
+  color:var(--primary);
+  padding:0.9rem 2.6rem;
+  border-radius:40px;
+  font-weight:700;
+  font-size:1.15rem;
+  box-shadow:0 3px 8px rgba(81,24,255,.15);
+}
+
   </style>
 </head>
 <body>
@@ -295,14 +341,28 @@
     <p>The UoA Legal Tech Society is a student-run group advancing legal technology and innovation. Our mission is to connect students, professionals and academics exploring how technology is transforming the practice and study of law.</p>
   </section>
 
+
   <!-- ===== JOIN CTA ===== -->
-  <section id="join-cta">
-    <div class="cta-inner">
-      <h2>270+ Members from 6 Universities</h2>
-      <p class="cta-sub">Become part of the Legal Tech Society community!</p>
-      <a href="https://forms.gle/Maad5N4tk7XgCqyv8" class="cta-btn" target="_blank" rel="noopener">Become a Member</a>
-    </div>
-  </section>
+<section id="join-cta">
+  <div class="cta-inner">
+    <p class="cta-big">
+      <span class="cta-number">270+</span>
+      <span class="cta-members">members</span>
+    </p>
+
+    <p class="cta-line">
+      Από <span class="hl-yellow">from 5+ Universities</span> 
+    </p>
+
+    <p class="cta-unis">Become part of the Legal Tech Society community!</p>
+
+    <a href="https://forms.gle/Maad5N4tk7XgCqyv8"
+       class="cta-btn" target="_blank" rel="noopener">
+      Become part of the Legal Tech Society community
+    </a>
+  </div>
+</section>
+
 
   <!-- ===== PAST EVENTS ===== -->
   <section id="past-events">
@@ -390,7 +450,7 @@
   <!-- ===== FOOTER ===== -->
 <footer>
   <p style="margin-bottom:0.6rem">
-    © 2025 University of Athens Legal Tech Society. Proudly vibecoded by UoA Legal Tech Society's team.
+    © 2025 University of Athens Legal Tech Society. Proudly vibecoded by our team!
   </p>
 
   <ul class="footer-social">

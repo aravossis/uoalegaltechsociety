@@ -391,11 +391,11 @@
 }
 
 /* square logo */
+/* logo: diagonal rounding (TL + BR) */
 .logo-square{
-  height:110px;             /* adjust as you like */
+  height:110px;          /* whatever size you’re using */
   width:auto;
-  border-radius:0;          /* sharp corners */
-  flex-shrink:0;
+  border-radius:16px 0 16px 0;   /* TL ‑ TR ‑ BR ‑ BL */
 }
 
 .brand-text{line-height:1.05;text-align:left}

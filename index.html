@@ -1,317 +1,201 @@
+html
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <link rel="icon" type="image/png" href="favicon.ico">
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>University of Athens Legal Tech Society</title>
-<meta name="description" content="Student society at University of Athens exploring legal technology, AI & digital governance.">
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome icons (no integrity to avoid CSP issues in editors) -->
+  <title>University of Athens · Legal Tech Society</title>
+  <meta name="description" content="Student society at University of Athens exploring legal technology, AI &amp; digital governance.">
+  <link rel="icon" type="image/png" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer">
 
   <style>
-    /* =========  COLOR & TYPOGRAPHY  ========= */
-    :root{
-      --primary:#5118ff;
-      --primary-dark:#390ec9;
-      --bg-light:#f9f9f9;
-      --text-dark:#222;
-      --text-light:#fff;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:'Open Sans',sans-serif;
-      background:var(--bg-light);
-      color:var(--text-dark);
-      line-height:1.6;
-    }
-    a{color:inherit;text-decoration:none}
-
-    /* =========  HEADER & NAV  ========= */
-    header{
-      background:var(--primary);
-      color:var(--text-light);
-      text-align:center;
-      padding:2rem 1rem 1rem;
-    }
-    header img{width:auto;height:120px}
-    header h1{font-size:2.2rem;font-weight:700;margin-top:1rem}
-    .badge{
-      background:var(--primary-dark);
-      display:inline-block;
-      padding:.4rem .9rem;
-      border-radius:999px;
-      margin-top:.75rem;
-      font-size:.85rem;
-    }
-    nav{margin-top:1.6rem}
-    .nav-links{
-      list-style:none;
-      display:flex;
-      justify-content:center;
-      gap:1.6rem;
-      flex-wrap:wrap;
-    }
-    .nav-links a{
-      color:var(--text-light);
-      font-weight:600;
-      transition:opacity .2s;
-    }
-    .nav-links a:hover{opacity:.85}
-/* bright yellow for the CTA headline */
-#join-cta h2 {
-  color: #FFA51B;   /* exact RGB 255,165,27 from your image */
+/* ============  COLOURS & TYPOGRAPHY  ============ */
+:root{
+  --primary:#5118ff;
+  --primary-dark:#390ec9;
+  --secondary:#FFA51B;      /* bright yellow accent */
+  --bg-light:#f9f9ff;       /* very light lavender */
+  --text-dark:#001d60;      /* deep navy for body copy */
+  --text-light:#ffffff;
 }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Open Sans',sans-serif;
+  background:var(--bg-light);
+  color:var(--text-dark);
+  line-height:1.6;
+}
+a{color:inherit;text-decoration:none;transition:opacity .25s;}
+a:hover{opacity:.85}
 
-    /* =========  SOCIAL ICONS  ========= */
-    .social{
-      list-style:none;
-      display:flex;
-      justify-content:center;
-      gap:1.3rem;
-      margin-top:1rem;
-    }
-    .social a{
-      font-size:1.5rem;
-      transition:opacity .3s;
-    }
-    .social a:hover{opacity:.8}
-
-    /* =========  GENERIC SECTIONS  ========= */
-    section{padding:3rem 1rem}
-    section h2{color:var(--primary);text-align:center;margin-bottom:2rem}
-
-    /* =========  ABOUT  ========= */
-    #about{max-width:900px;margin:0 auto;text-align:center}
-
-    /* =========  JOIN CTA  ========= */
-    #join-cta{
-      background:linear-gradient(90deg,var(--primary) 70%,#7157f7 100%);
-      color:var(--text-light);
-      text-align:center;
-    }
-    .cta-inner{max-width:620px;margin:0 auto}
-    #join-cta h2{font-size:2.3rem;font-weight:800;margin-bottom:1rem}
-    .cta-sub{font-size:1.1rem;margin-bottom:2rem}
-    .cta-btn{
-      display:inline-block;
-      background:#fff;
-      color:var(--primary);
-      font-weight:700;
-      padding:.9rem 2.4rem;
-      border-radius:40px;
-      transition:.25s;
-      box-shadow:0 2px 8px rgba(81,24,255,.12);
-    }
-    .cta-btn:hover{background:var(--primary-dark);color:#fff}
-
-    /* =========  PAST EVENTS  ========= */
-    .events-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:1.5rem;
-      max-width:1000px;
-      margin:0 auto;
-    }
-    .event-card{
-      background:#fff;
-      border-radius:12px;
-      box-shadow:0 3px 8px rgba(0,0,0,.06);
-      padding:1rem;
-      text-align:center;
-      transition:transform .2s;
-    }
-    .event-card:hover{transform:translateY(-4px)}
-    .event-card img{
-      width:100%;
-      max-width:240px;
-      height:140px;
-      object-fit:cover;
-      border-radius:10px;
-      margin-bottom:.9rem;
-      background:#eee;
-    }
-    .event-card h3{color:var(--primary-dark);font-size:1.1rem;margin:.4rem 0 .2rem}
-    .event-card .date{color:#777;font-size:.9rem;margin-bottom:.4rem}
-
-    /* =========  BOARD  ========= */
-    .team-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-      gap:1.4rem;
-      max-width:1200px;
-      margin:0 auto;
-    }
-    .team-card{
-      background:var(--bg-light);
-      border-radius:12px;
-      text-align:center;
-      padding:1.5rem 1rem;
-      box-shadow:0 4px 6px rgba(0,0,0,.05);
-      transition:transform .25s;
-    }
-    .team-card:hover{transform:translateY(-5px)}
-    .team-card img{
-      width:160px;height:160px;
-      border-radius:50%;
-      object-fit:cover;
-      margin-bottom:1rem;
-      background:#ddd;
-    }
-    .team-card p{font-size:.9rem;color:#555}
-
-    /* =========  REPRESENTATIVES  ========= */
-    .rep-section{max-width:1000px;margin:0 auto 2.5rem}
-    .rep-section h3{color:var(--primary-dark);margin-bottom:1rem;text-align:left}
-    .rep-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-      gap:1.2rem;
-    }
-    .rep-card{
-      background:#fff;
-      padding:1rem;
-      border-radius:10px;
-      text-align:center;
-      box-shadow:0 3px 5px rgba(0,0,0,.04);
-    }
-    .rep-card img{
-      width:100px;height:100px;
-      border-radius:50%;
-      object-fit:cover;
-      margin-bottom:.75rem;
-      background:#eee;
-    }
-    /* simple list style for reps */
-.rep-list{
-  list-style:none;
-  padding-left:0;
-  columns:2 auto;       /* two‑column layout on wide screens */
-  max-width:600px;
+/* ============  HEADER / HERO  ============ */
+header{
+  background:var(--primary);
+  color:var(--text-light);
+}
+.header-inner{
+  max-width:1140px;
   margin:0 auto;
-}
-.rep-list li{
-  margin:0.3rem 0;
-}
-@media(max-width:600px){
-  .rep-list{columns:1;} /* single column on mobile */
-}
-
-
-    /* =========  FOOTER  ========= */
-    footer{
-      background:var(--primary);
-      color:var(--text-light);
-      text-align:center;
-      padding:1rem;
-      font-size:.85rem;
-    }
-/* footer social icons – horizontal row, no bullets */
-.footer-social{
-  list-style:none;          /* no bullet dots */
-  display:flex;             /* one straight row */
-  justify-content:center;   /* centred under the copyright line */
-  gap:1.6rem;               /* spacing between icons */
-  padding:0;                /* remove left indent */
-  margin:0.6rem 0 1.2rem;   /* a little breathing room */
-}
-
-.footer-social a{
-  font-size:1.8rem;         /* bigger icons */
-  color:#fff;               /* white on purple footer */
-  transition:opacity .25s;
-}
-.footer-social a:hover{opacity:0.8}
-
-    /* =========  COOKIE BANNER  ========= */
-    #cookie-consent{position:fixed;bottom:0;left:0;right:0;display:none;z-index:3000}
-    .cookie-inner{
-      background:#fff;
-      color:#333;
-      border-radius:8px;
-      box-shadow:0 2px 12px rgba(0,0,0,.1);
-      max-width:95vw;
-      left:50%;
-      transform:translateX(-50%);
-      position:relative;
-      padding:1rem 1.2rem;
-      display:flex;
-      gap:1rem;
-      align-items:center;
-      font-size:1rem;
-    }
-    #cookie-consent button{
-      background:var(--primary);
-      color:#fff;
-      border:none;
-      padding:.55rem 1.3rem;
-      border-radius:24px;
-      font-weight:700;
-      cursor:pointer;
-      transition:background .18s;
-    }
-    #cookie-consent button:hover{background:var(--primary-dark)}
-
-    /* =========  RESPONSIVE TYPOGRAPHY  ========= */
-    @media(min-width:768px){
-      header h1{font-size:2.6rem}
-      #join-cta h2{font-size:2.8rem}
-    }
-    /* --- Join CTA look & feel --- */
-#join-cta{
-  background:#F3F1FF;       /* light lavender */
-  color:#001D60;            /* default navy */
+  padding:3rem 1rem 2.5rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
   text-align:center;
-  padding:3.5rem 1rem 3rem;
+}
+.logo{width:110px;height:auto;}
+.site-title{
+  font-size:2.6rem;
+  font-weight:800;
+  margin:.9rem 0 1.2rem;
+  line-height:1.15;
+}
+@media(min-width:768px){
+  .site-title{font-size:3.2rem}
 }
 
+/* “Under the auspices” block */
+.auspices-wrapper{margin-bottom:2.2rem;}
+.auspices-wrapper img{width:190px;height:auto;}
+
+/* NAVIGATION */
+nav{width:100%;}
+.nav-links{
+  list-style:none;
+  display:flex;
+  justify-content:center;
+  gap:1.8rem;
+  flex-wrap:wrap;
+  font-weight:600;
+}
+.nav-links a{color:var(--text-light);}
+.nav-links a:hover{opacity:.9}
+
+/* SOCIAL ICONS */
+.social{
+  list-style:none;
+  display:flex;
+  justify-content:center;
+  gap:1.4rem;
+  margin-top:1.7rem;
+}
+.social a{font-size:1.6rem;color:var(--text-light);}
+
+/* ============  JOIN – CTA STRIP  ============ */
+#join-cta{
+  background:var(--bg-light);
+  color:var(--text-dark);
+  text-align:center;
+  padding:4rem 1rem 3.5rem;
+}
 .cta-number{
-  color:#FFA51B;            /* bright yellow */
-  font-size:4.8rem;
+  font-size:4.6rem;
   font-weight:800;
+  color:var(--secondary);
   line-height:1;
 }
-
 .cta-members{
   font-size:3rem;
   font-weight:700;
-  margin-left:0.4rem;
+  margin-left:.3rem;
 }
-
-.cta-line{
-  font-size:1.4rem;
-  margin:1.6rem 0 0.8rem;
-}
-
-.hl-yellow{color:#FFA51B;font-weight:700;}
-
-.cta-unis{
-  font-size:1.8rem;
-  font-weight:700;
-  letter-spacing:1px;
-  margin-bottom:2.2rem;
-}
-
-/* keep the existing button styles but add a slight shadow tweak */
+.cta-line{font-size:1.35rem;margin:1.5rem 0 .7rem;}
+.hl-yellow{color:var(--secondary);font-weight:700;}
 .cta-btn{
-  background:#fff;
+  display:inline-block;
+  margin-top:2rem;
+  background:var(--text-light);
   color:var(--primary);
-  padding:0.9rem 2.6rem;
-  border-radius:40px;
   font-weight:700;
-  font-size:1.15rem;
-  box-shadow:0 3px 8px rgba(81,24,255,.15);
+  font-size:1.1rem;
+  padding:.95rem 2.7rem;
+  border-radius:44px;
+  box-shadow:0 4px 12px rgba(81,24,255,.14);
+}
+.cta-btn:hover{background:var(--primary-dark);color:#fff}
+
+/* ============  GENERIC SECTIONS  ============ */
+section{padding:3.2rem 1rem}
+section h2{
+  color:var(--primary);
+  text-align:center;
+  margin-bottom:2.1rem;
+  font-size:2.1rem;
+}
+@media(min-width:768px){
+  section h2{font-size:2.4rem}
 }
 
-    /* ===== Academic Advisor section ===== */
-#advisor{
-  padding:3rem 1rem;
-  background:#f9f9ff;           /* subtle light background */
+/* ============  PAST EVENTS GRID  ============ */
+.events-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.6rem;
+  max-width:1000px;
+  margin:0 auto;
 }
+.event-card{
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 3px 10px rgba(0,0,0,.06);
+  padding:1.1rem;
+  text-align:center;
+  transition:transform .2s;
+}
+.event-card:hover{transform:translateY(-5px)}
+.event-card img{
+  width:100%;
+  max-width:240px;
+  height:140px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-bottom:.9rem;
+  background:#eee;
+}
+.event-card h3{color:var(--primary-dark);font-size:1.15rem;margin:.45rem 0 .25rem}
+.event-card .date{color:#666;font-size:.92rem;margin-bottom:.5rem}
+
+/* ============  BOARD & OTHER GRIDS  ============ */
+.team-grid,.rep-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1.5rem;
+  max-width:1100px;
+  margin:0 auto;
+}
+.team-card,.rep-card{
+  background:#fff;
+  border-radius:14px;
+  text-align:center;
+  padding:1.6rem 1rem 1.4rem;
+  box-shadow:0 3px 8px rgba(0,0,0,.05);
+  transition:transform .25s;
+}
+.team-card:hover,.rep-card:hover{transform:translateY(-5px)}
+.team-card img,.rep-card img{
+  width:160px;height:160px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:1rem;
+  background:#ddd;
+}
+.team-card h3{margin-bottom:.3rem}
+
+/* Year rep two-column list */
+.rep-list{
+  list-style:none;
+  columns:2 300px;
+  max-width:620px;
+  margin:0 auto;
+  padding-left:0;
+}
+.rep-list li{margin:.35rem 0;}
+@media(max-width:600px){.rep-list{columns:1;}}
+
+/* ============  ACADEMIC ADVISOR SECTION  ============ */
+#advisor{background:#f9f9ff;}
 .advisor-card{
   display:flex;
   flex-direction:column;
@@ -326,15 +210,16 @@
   border-radius:50%;
   object-fit:cover;
 }
-.advisor-info h3{font-size:1.4rem;font-weight:700;color:#001d60;margin-bottom:.2rem}
-.advisor-info a{font-size:1.8rem;color:#0077b5;margin-top:.6rem}
+.advisor-info h3{
+  font-size:1.35rem;
+  font-weight:700;
+  color:var(--text-dark);
+  margin-bottom:.3rem;
+}
+.advisor-info a{font-size:1.8rem;color:#0077b5;margin-top:.6rem;}
 .advisor-info a:hover{opacity:.8}
 
-
-/* ===== Writing Team section ===== */
-#writing-team{
-  padding:3rem 1rem;
-}
+/* ============  WRITING TEAM  ============ */
 .writing-summary{
   max-width:800px;
   margin:0 auto;
@@ -348,177 +233,196 @@
   padding:.75rem 1.8rem;
   font-size:1rem;
 }
-/* image badge */
-.badge-img{
-  margin:-0.2rem auto 1.4rem;  /* tweak spacing */
-  max-width:420px;             /* keep it reasonable on large screens */
-}
-.badge-img img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-.visually-hidden{
-  position:absolute;
-  left:-9999px;
-  width:1px;height:1px;
-  overflow:hidden;
-}
 
-/* Auspices block */
-.auspices-wrapper{
+/* ============  FOOTER  ============ */
+footer{
+  background:var(--primary);
+  color:var(--text-light);
   text-align:center;
-  margin:0 auto 1.6rem;
+  padding:1.4rem 1rem;
+  font-size:.85rem;
 }
+.footer-social{
+  list-style:none;
+  display:flex;
+  justify-content:center;
+  gap:1.7rem;
+  margin-top:1rem;
+}
+.footer-social a{font-size:1.8rem;color:#fff;}
 
-.auspices-wrapper img{
-  max-width:220px;         /* prevents it blowing out on large screens */
-  width:100%;
-  height:auto;
+/* ============  COOKIE BANNER  ============ */
+#cookie-consent{position:fixed;bottom:0;left:0;right:0;display:none;z-index:3000}
+.cookie-inner{
+  background:#fff;
+  color:#333;
+  border-radius:8px;
+  box-shadow:0 2px 12px rgba(0,0,0,.1);
+  max-width:95vw;
+  left:50%;
+  transform:translateX(-50%);
+  position:relative;
+  padding:1rem 1.2rem;
+  display:flex;
+  gap:1rem;
+  align-items:center;
 }
-@media(max-width:600px){
-  .auspices-title{font-size:1.1rem}
-  .auspices-wrapper img{max-width:260px}
+#cookie-consent button{
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  padding:.55rem 1.3rem;
+  border-radius:24px;
+  font-weight:700;
+  cursor:pointer;
 }
-
+#cookie-consent button:hover{background:var(--primary-dark)}
   </style>
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header>
+<!-- ========== HEADER / HERO ========== -->
+<header>
+  <div class="header-inner">
+    <img src="logo.png" alt="Legal Tech Society logo" class="logo">
 
-    
-    <img src="logo.png" alt="Legal Tech Society logo">
-<h1 class="visually-hidden">University of Athens Legal Tech Society</h1>
+    <h1 class="site-title">
+      University of Athens<br>Legal Tech Society
+    </h1>
 
- <div class="auspices-wrapper">
-  <img src="auspices-mdg.png"
-       alt="Hellenic Republic – Ministry of Digital Governance">
-</div>
-     <!-- NAVIGATION -->
+    <div class="auspices-wrapper">
+      <img src="auspices-mdg.png"
+           alt="Hellenic Republic – Ministry of Digital Governance">
+    </div>
+
     <nav>
       <ul class="nav-links">
         <li><a href="#join-cta">Join</a></li>
-        <li><a href="#past-events">Past Events</a></li>
+        <li><a href="#past-events">Past Events</a></li>
         <li><a href="#board">Board</a></li>
         <li><a href="#representatives">Representatives</a></li>
       </ul>
     </nav>
 
-    <!-- SOCIAL ICONS -->
-    <ul class="social">
+    <ul class="social" aria-label="Social media links">
       <li><a href="https://www.instagram.com/uoalegaltechsociety/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
       <li><a href="https://www.linkedin.com/company/university-of-athens-legal-tech-society" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
       <li><a href="https://www.youtube.com/channel/UCMtzoodKvkPYkMW5TBcRvkg" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
       <li><a href="https://www.facebook.com/profile.php?id=61573523858683" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
     </ul>
+  </div>
+</header>
 
-</div>
-
-
-   
-  </header>
-
-
-
-
-  <!-- ===== JOIN CTA ===== -->
+<!-- ========== JOIN CTA ========== -->
 <section id="join-cta">
-  <div class="cta-inner">
-    <p class="cta-big">
-      <span class="cta-number">270+</span>
-      <span class="cta-members">members</span>
-    </p>
+  <p>
+    <span class="cta-number">270+</span>
+    <span class="cta-members">members</span>
+  </p>
 
-    <p class="cta-line">
-      From <span class="hl-yellow"> 5+ Universities</span> 
-    </p>
-    <a href="https://forms.gle/Maad5N4tk7XgCqyv8"
-       class="cta-btn" target="_blank" rel="noopener">
-      Become part of the Legal Tech Society community!
-    </a>
+  <p class="cta-line">
+    From <span class="hl-yellow">5+ Universities</span>
+  </p>
+
+  <a href="https://forms.gle/Maad5N4tk7XgCqyv8" class="cta-btn" target="_blank" rel="noopener">
+    Become part of the Legal Tech Society community!
+  </a>
+</section>
+
+<!-- ===== PAST EVENTS ===== -->
+<section id="past-events">
+  <h2>Past Events</h2>
+  <div class="events-grid">
+    <!-- Event 1 -->
+    <div class="event-card">
+      <img src="event1.jpg" alt="Prompt Engineering workshop poster">
+      <h3>Prompt Engineering for Lawyers</h3>
+      <p class="date">7 June 2025</p>
+      <p>• Hands‑on with ChatGPT &amp; legal prompts<br>
+         • Professor G. Giannopoulos (keynote)<br>
+         • Automation use‑cases for legal tasks
+      </p>
+    </div>
+    <!-- Event 2 -->
+    <div class="event-card">
+      <img src="event2.jpg" alt="AI &amp; Law seminar poster">
+      <h3>AI &amp; Law: Toward Constitutional Reform</h3>
+      <p class="date">15 May 2025</p>
+      <p>Speakers: Prof. S. Vlachopoulos, A. Spyridonos<br>
+         Institutional impacts of AI on legal practice
+      </p>
+    </div>
+    <!-- Event 3 -->
+    <div class="event-card">
+      <img src="event3.jpg" alt="AI ACT poster">
+      <h3>AI Act; High Risk Systems &amp; Dangers</h3>
+      <p class="date">15 May 2025</p>
+      <p>Speaker: Dr. M. Koutsoupia<br>
+         Regulatory challenges &amp; compliance insights
+      </p>
+    </div>
   </div>
 </section>
 
-
-  <!-- ===== PAST EVENTS ===== -->
-  <section id="past-events">
-    <h2>Past Events</h2>
-    <div class="events-grid">
-  <!-- Prompt Engineering Workshop -->
-<div class="event-card">
-  <img src="event1.jpg" alt="Prompt Engineering workshop poster">
-  <h3>Prompt Engineering for Lawyers</h3>
-  <p class="date">7 June 2025</p>
-  <p>
-    • Hands‑on with ChatGPT & legal prompts<br>
-    • Professor G. Giannopoulos (keynote)<br>
-    • Automation use‑cases for legal tasks
-  </p>
-</div>
-<!-- AI & Law Constitutional Reform -->
-<div class="event-card">
-  <img src="event2.jpg" alt="AI & Law seminar poster">
-  <h3>AI & Law: Toward Constitutional Reform</h3>
-  <p class="date">15 May 2025</p>
-  <p>
-    Speakers: Prof. S. Vlachopoulos, A. Spyridonos<br>
-    Institutional impacts of AI on legal practice
-  </p>
-</div>
-<!-- AI ACT -->
-<div class="event-card">
-  <img src="event3.jpg" alt="AI ACT poster">
-  <h3>AI Act; High Risk Systems & Dangers </h3>
-  <p class="date">15 May 2025</p>
-  <p>
-    Speakers: Dr. M. Koutsoupia <br>
-    Institutional impacts of AI on legal practice
-  </p>
-</div>
-    </div>
-  </section>
-
-  <!-- ===== BOARD ===== -->
+<!-- ===== BOARD ===== -->
 <section id="board">
   <h2>Board</h2>
   <div class="team-grid">
     <div class="team-card">
       <img src="board1.jpg" alt="Giorgos Aravosis">
-      <h3>Giorgos Aravosis</h3>
+      <h3>Giorgos Aravosis</h3>
       <p>President</p>
-      <a href="https://www.linkedin.com/in/george-aravosis-b85496221/" target="_blank">
+      <a href="https://www.linkedin.com/in/george-aravosis-b85496221/" target="_blank" aria-label="LinkedIn">
         <i class="fab fa-linkedin"></i>
       </a>
     </div>
- 
 
-      <div class="team-card"><img src="board2.jpg" alt="Charis Voulgaraki"><h3>Charis Voulgaraki</h3><p>Vice-President</p></div>
-      <div class="team-card"><img src="board3.jpg" alt="Vasiliki Damaskou"><h3>Vasiliki Damaskou</h3><p>General Secretary</p></div>
-      <div class="team-card"><img src="board4.jpg" alt="Varvara-Vasiliki Kossieri"><h3>Varvara-Vasiliki Kossieri</h3><p>Head of Marketing</p></div>
-      <div class="team-card"><img src="board5.jpg" alt="Ergina Georgiou"><h3>Ergina Georgiou</h3><p>Head of Events</p></div>
-      <div class="team-card"><img src="board6.jpg" alt="Vasiliki-Rafaella Serepa"><h3>Vasiliki-Rafaella Serepa</h3><p>Head of Academic Activities</p></div>
+    <div class="team-card">
+      <img src="board2.jpg" alt="Charis Voulgaraki">
+      <h3>Charis Voulgaraki</h3>
+      <p>Vice‑President</p>
     </div>
 
+    <div class="team-card">
+      <img src="board3.jpg" alt="Vasiliki Damaskou">
+      <h3>Vasiliki Damaskou</h3>
+      <p>General Secretary</p>
+    </div>
 
-  </section>
-  <!-- ===== Academic Advisor ===== -->
+    <div class="team-card">
+      <img src="board4.jpg" alt="Varvara‑Vasiliki Kossieri">
+      <h3>Varvara‑Vasiliki Kossieri</h3>
+      <p>Head of Marketing</p>
+    </div>
+
+    <div class="team-card">
+      <img src="board5.jpg" alt="Ergina Georgiou">
+      <h3>Ergina Georgiou</h3>
+      <p>Head of Events</p>
+    </div>
+
+    <div class="team-card">
+      <img src="board6.jpg" alt="Vasiliki‑Rafaella Serepa">
+      <h3>Vasiliki‑Rafaella Serepa</h3>
+      <p>Head of Academic Activities</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Academic Advisor ===== -->
 <section id="advisor">
-  <h2>Academic&nbsp;Advisor</h2>
+  <h2>Academic Advisor</h2>
   <div class="advisor-card">
-    <img src="prof.jpg" alt="Prof. George Giannopoulos">
+    <img src="prof.jpg" alt="Prof. George Giannopoulos">
     <div class="advisor-info">
-      <h3>Professor George Giannopoulos</h3>
-      <p>Director, Legal Informatics Lab · National & Kapodistrian University of Athens</p>
+      <h3>Professor George Giannopoulos</h3>
+      <p>Director, Legal Informatics Lab · National &amp; Kapodistrian University of Athens</p>
       <a href="https://www.linkedin.com/in/georgios-yannopoulos-34865511/" target="_blank" aria-label="LinkedIn">
         <i class="fab fa-linkedin"></i>
       </a>
     </div>
   </div>
 </section>
-
-
 
 <!-- ===== REPRESENTATIVES ===== -->
 <section id="representatives">
@@ -559,7 +463,7 @@
   </div>
 </section>
 
-  <!-- ===== Writing Team ===== -->
+<!-- ===== WRITING TEAM ===== -->
 <section id="writing-team">
   <h2>Writing Team</h2>
   <div class="writing-summary">
@@ -572,43 +476,21 @@
     <a href="#join-cta" class="cta-btn mini">Join the Writing Team</a>
   </div>
 </section>
- 
-  <!-- ===== FOOTER ===== -->
+
+<!-- ===== FOOTER ===== -->
 <footer>
-  <p style="margin-bottom:0.6rem">
+  <p style="margin-bottom:.6rem">
     © 2025 University of Athens Legal Tech Society. Proudly vibecoded by our team!
   </p>
-
   <ul class="footer-social">
-    <li>
-      <a href="https://www.instagram.com/uoalegaltechsociety/"
-         target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://www.linkedin.com/company/university-of-athens-legal-tech-society"
-         target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://www.youtube.com/channel/UCMtzoodKvkPYkMW5TBcRvkg"
-         target="_blank" aria-label="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://www.facebook.com/profile.php?id=61573523858683"
-         target="_blank" aria-label="Facebook">
-        <i class="fab fa-facebook"></i>
-      </a>
-    </li>
+    <li><a href="https://www.instagram.com/uoalegaltechsociety/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+    <li><a href="https://www.linkedin.com/company/university-of-athens-legal-tech-society" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+    <li><a href="https://www.youtube.com/channel/UCMtzoodKvkPYkMW5TBcRvkg" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+    <li><a href="https://www.facebook.com/profile.php?id=61573523858683" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
   </ul>
 </footer>
 
-
-  <!-- ===== SIMPLE COOKIE CONSENT ===== -->
+<!-- ===== SIMPLE COOKIE CONSENT ===== -->
 <div id="cookie-consent">
   <div class="cookie-inner">
     <span>This website uses cookies to ensure you get the best experience.</span>
@@ -616,14 +498,18 @@
   </div>
 </div>
 
+<script>
+/* simple GDPR cookie banner logic */
+window.addEventListener('DOMContentLoaded',()=>{
+  const banner=document.getElementById('cookie-consent');
+  if(!localStorage.getItem('gdpr_consent')) banner.style.display='block';
+  document.getElementById('cookie-accept').onclick=()=>{
+    localStorage.setItem('gdpr_consent','yes');
+    banner.style.display='none';
+  };
+});
+</script>
 
-  <script>
-    /* --- basic GDPR cookie banner --- */
-    window.addEventListener('DOMContentLoaded',()=>{
-      const banner=document.getElementById('cookie-consent');
-      if(!localStorage.getItem('gdpr_consent')) banner.style.display='block';
-      document.getElementById('cookie-accept').onclick=()=>{localStorage.setItem('gdpr_consent','yes');banner.style.display='none'};
-    });
-  </script>
 </body>
 </html>
+```

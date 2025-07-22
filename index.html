@@ -330,6 +330,7 @@
 .advisor-info a{font-size:1.8rem;color:#0077b5;margin-top:.6rem}
 .advisor-info a:hover{opacity:.8}
 
+
 /* ===== Writing Team section ===== */
 #writing-team{
   padding:3rem 1rem;
@@ -357,7 +358,28 @@
   height:auto;
   display:block;
 }
+.visually-hidden{
+  position:absolute;
+  left:-9999px;
+  width:1px;height:1px;
+  overflow:hidden;
+}
 
+/* Auspices block */
+.auspices-wrapper{
+  text-align:center;
+  margin:0 auto 1.6rem;
+}
+
+.auspices-wrapper img{
+  max-width:320px;         /* prevents it blowing out on large screens */
+  width:100%;
+  height:auto;
+}
+@media(max-width:600px){
+  .auspices-title{font-size:1.1rem}
+  .auspices-wrapper img{max-width:260px}
+}
 
   </style>
 </head>
@@ -366,17 +388,19 @@
   <!-- ===== HEADER ===== -->
   <header>
     <img src="logo.png" alt="Legal Tech Society logo">
-    <h1>University of Athens Legal Tech Society</h1>
-    <div class="badge-img">
+<h1 class="visually-hidden">University of Athens Legal Tech Society</h1>
+
+ <div class="auspices-wrapper">
   <img src="auspices-mdg.png"
-       alt="Under the Auspices of Hellenic Republic – Ministry of Digital Governance">
+       alt="Hellenic Republic – Ministry of Digital Governance">
+</div>
+
 </div>
 
 
     <!-- NAVIGATION -->
     <nav>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
         <li><a href="#join-cta">Join</a></li>
         <li><a href="#past-events">Past Events</a></li>
         <li><a href="#board">Board</a></li>

@@ -307,6 +307,48 @@
   box-shadow:0 3px 8px rgba(81,24,255,.15);
 }
 
+    /* ===== Academic Advisor section ===== */
+#advisor{
+  padding:3rem 1rem;
+  background:#f9f9ff;           /* subtle light background */
+}
+.advisor-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1rem;
+  max-width:420px;
+  margin:0 auto;
+  text-align:center;
+}
+.advisor-card img{
+  width:160px;height:160px;
+  border-radius:50%;
+  object-fit:cover;
+}
+.advisor-info h3{font-size:1.4rem;font-weight:700;color:#001d60;margin-bottom:.2rem}
+.advisor-info a{font-size:1.8rem;color:#0077b5;margin-top:.6rem}
+.advisor-info a:hover{opacity:.8}
+
+/* ===== Writing Team section ===== */
+#writing-team{
+  padding:3rem 1rem;
+}
+.writing-summary{
+  max-width:800px;
+  margin:0 auto;
+  text-align:center;
+  font-size:1.1rem;
+  line-height:1.5;
+}
+.cta-btn.mini{
+  display:inline-block;
+  margin-top:1.4rem;
+  padding:.75rem 1.8rem;
+  font-size:1rem;
+}
+
+
   </style>
 </head>
 <body>
@@ -426,13 +468,26 @@
       <div class="team-card"><img src="board5.jpg" alt="Ergina Georgiou"><h3>Ergina Georgiou</h3><p>Head of Events</p></div>
       <div class="team-card"><img src="board6.jpg" alt="Vasiliki-Rafaella Serepa"><h3>Vasiliki-Rafaella Serepa</h3><p>Head of Academic Activities</p></div>
     </div>
-  <div class="team-card">
-  <img src="προφ.jpg" alt="Prof. George Giannopoulos">
-  <h3>Prof. George Giannopoulos</h3>
-  <p>Academic Advisor<br>Director, Legal Informatics Lab (UoA)</p>
-</div>
+
 
   </section>
+  <!-- ===== Academic Advisor ===== -->
+<section id="advisor">
+  <h2>Academic&nbsp;Advisor</h2>
+  <div class="advisor-card">
+    <img src="prof.jpg" alt="Prof. George Giannopoulos">
+    <div class="advisor-info">
+      <h3>Professor George Giannopoulos</h3>
+      <p>Director, Legal Informatics Lab · National & Kapodistrian University of Athens</p>
+      <a href="https://www.linkedin.com/in/georgios-yannopoulos-34865511/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
 <!-- ===== REPRESENTATIVES ===== -->
 <section id="representatives">
   <h2>Year Representatives</h2>
@@ -472,6 +527,19 @@
   </div>
 </section>
 
+  <!-- ===== Writing Team ===== -->
+<section id="writing-team">
+  <h2>Writing Team</h2>
+  <div class="writing-summary">
+    <p>
+      Our Writing Team counts <strong>52 active student authors</strong> who publish articles on emerging
+      legal‑tech issues in <em>Nomiki Bibliothiki Daily</em> and other academic outlets.  
+      They will present their work at the 1<sup>st</sup> Student Conference on Legal Informatics
+      in November 2025.
+    </p>
+    <a href="#join-cta" class="cta-btn mini">Join the Writing Team</a>
+  </div>
+</section>
  
   <!-- ===== FOOTER ===== -->
 <footer>
